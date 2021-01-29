@@ -1,0 +1,9 @@
+name: 'Shield Hole'
+description: 'Allows certain URLs to bypass Shield module authentication'
+package: 'Shield Hole'
+type: module
+core: 8.x
+version: 1.0
+configure: shield_hole.admin_settings
+dependencies:
+  - shield

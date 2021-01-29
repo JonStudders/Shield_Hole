@@ -1,0 +1,6 @@
+shield_hole.admin:
+  title: 'Shield Hole Settings'
+  description: 'Shield Hole config form'
+  parent: system.admin_config_system
+  route_name: shield_hole.admin_settings
+  weight: 1

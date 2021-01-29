@@ -1,0 +1,7 @@
+shield_hole.admin_settings:
+  path: '/admin/config/shield_hole'
+  defaults:
+    _form: '\Drupal\shield_hole\Form\ModuleConfigurationForm'
+    _title: 'Shield Hole Settings'
+  requirements:
+    _permission: 'administer site configuration'
