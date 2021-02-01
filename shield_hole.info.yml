@@ -1,5 +1,5 @@
 name: 'Shield Hole'
-description: 'Allows certain URLs to bypass Shield module authentication '
+description: 'Allows certain URLs to bypass Shield module authentication'
 package: 'Shield Hole'
 type: module
 core_version_requirement: ^8.8.3 || ^9
