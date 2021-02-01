@@ -3,7 +3,6 @@ description: 'Allows certain URLs to bypass Shield module authentication'
 package: 'Shield Hole'
 type: module
 core_version_requirement: ^8.8.3 || ^9
-version: 1.0
 configure: shield_hole.admin_settings
 dependencies:
   - shield:shield
