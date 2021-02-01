@@ -31,7 +31,7 @@ class ModuleConfigurationForm extends ConfigFormBase {
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
     $config = $this->config('shield_hole.settings');
-    $urls = ($config->get('urls'))["url"];
+    $urls = ($config->get('urls'))['url'];
     $url_field = $form_state->get('num_urls');
     $form['#tree'] = TRUE;
     $form['url_fieldset'] = [ //Initialises my fieldset

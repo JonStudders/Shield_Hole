@@ -27,10 +27,10 @@ class ShieldOverride extends ShieldMiddleware
 
     // Fetch my config.
     $config = \Drupal::config('shield_hole.settings');
-    $urls = ($config->get('urls'))["url"];
+    $urls = ($config->get('urls'))['url'];
 
     // If method is POST or GET and path is in the $urls array.
-    if (($currentMethod == 'POST' || $currentMethod == 'GET') && in_array($currentPath, $urls)){
+    if (($currentMethod === 'POST' || $currentMethod === 'GET') && in_array($currentPath, $urls)){
       // If we are attempting to access the service then we handle the
       // request without invoking the Shield module.
       return $this->httpKernel->handle($request, $type, $catch);
