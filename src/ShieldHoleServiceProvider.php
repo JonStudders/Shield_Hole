@@ -7,7 +7,7 @@ use Drupal\Core\DependencyInjection\ContainerBuilder;
 use Drupal\Core\DependencyInjection\ServiceProviderBase;
 
 /**
- * Class ShieldHoleServiceProvider.
+ * Alters the container to override the shield middleware.
  *
  * @package Drupal\shield_hole
  */

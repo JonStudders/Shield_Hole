@@ -7,18 +7,16 @@ use Drupal\shield\ShieldMiddleware;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
- * Class ShieldOverride.
+ * ShieldOverride decorates the ShieldMiddleware to bypass according to config.
  *
  * @package Drupal\shield_hole
  */
-class ShieldOverride extends ShieldMiddleware
-{
+class ShieldOverride extends ShieldMiddleware {
 
   /**
    * {@inheritdoc}
    */
-  public function handle(Request $request, $type = self::MASTER_REQUEST, $catch = TRUE)
-  {
+  public function handle(Request $request, $type = self::MASTER_REQUEST, $catch = TRUE) {
     // Get the current request URI.
     $currentPath = $request->getRequestUri();
 
@@ -30,7 +28,7 @@ class ShieldOverride extends ShieldMiddleware
     $urls = ($config->get('urls'))['url'];
 
     // If method is POST or GET and path is in the $urls array.
-    if (($currentMethod === 'POST' || $currentMethod === 'GET') && in_array($currentPath, $urls)){
+    if (($currentMethod === 'POST' || $currentMethod === 'GET') && in_array($currentPath, $urls)) {
       // If we are attempting to access the service then we handle the
       // request without invoking the Shield module.
       return $this->httpKernel->handle($request, $type, $catch);
