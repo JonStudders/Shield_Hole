@@ -32,7 +32,7 @@ class ModuleConfigurationForm extends ConfigFormBase {
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
     $config = $this->config('shield_hole.settings');
-    $urls = ($config->get('urls'))['url'];
+    $urls = ($config->get('urls'));
     $url_field = $form_state->get('num_urls');
     $form['#tree'] = TRUE;
     // Initialises my fieldset.
@@ -122,7 +122,7 @@ class ModuleConfigurationForm extends ConfigFormBase {
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
     $this->config('shield_hole.settings')
-      ->set('urls', $form_state->getValue('url_fieldset'))
+      ->set('urls', $form_state->getValue('url_fieldset')['url'])
       ->save();
     parent::submitForm($form, $form_state);
   }
