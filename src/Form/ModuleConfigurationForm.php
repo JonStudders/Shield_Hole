@@ -38,17 +38,16 @@ class ModuleConfigurationForm extends ConfigFormBase {
     // Initialises my fieldset.
     $form['url_fieldset'] = [
       '#type' => 'fieldset',
-      '#title' => $this->t('Whitelisted URLs - Format: "/endpointURL"'),
+      '#title' => $this->t('Whitelisted URLs - Format: "/endpointURL" - Paths must be encoded'),
       '#prefix' => '<div id="url-fieldset-wrapper">',
       '#suffix' => '</div>',
     ];
-    if (empty($url_field)) {
-      // Set num_urls on obj to however in DB.
-      $url_field = $form_state->set('num_urls', count($urls));
-      if (count($urls) === 0) {
-        // If none in db it will set to 1.
+    if (empty($url_field) && $urls === NULL) {
         $url_field = $form_state->set('num_urls', 1);
-      }
+    }
+    else if (empty($url_field)) {
+        //set num_urls on obj to however many in DB
+        $url_field = $form_state->set('num_urls', count($urls));
     }
     $url_field = $form_state->get('num_urls');
     // Create field for every url_field in obj.

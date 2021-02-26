@@ -17,8 +17,8 @@ class ShieldOverride extends ShieldMiddleware {
    * {@inheritdoc}
    */
   public function handle(Request $request, $type = self::MASTER_REQUEST, $catch = TRUE) {
-    // Get the current request URI.
-    $currentPath = $request->getRequestUri();
+    // Get the raw current path.
+    $currentPath = $request->getPathInfo();
 
     // Get the current method (e.g. GET or POST).
     $currentMethod = $request->getMethod();
